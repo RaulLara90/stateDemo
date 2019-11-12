@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Switch from 'react-switch'
 
 const wrapperStyles = {
@@ -9,11 +9,13 @@ const wrapperStyles = {
 }
 
 const Toggle = (props) => {
+  const [checked, setChecked] = useState(false)
+
   return (
     <div style={wrapperStyles}>
       <Switch
-        // onChange={onChange}
-        // checked={checked}
+        onChange={setChecked}
+        checked={checked}
         onColor='#282c34'
         offColor='#BBB8B2'
         offHandleColor='#282c34'
@@ -24,5 +26,4 @@ const Toggle = (props) => {
     </div>
   )
 }
-
 export { Toggle }
